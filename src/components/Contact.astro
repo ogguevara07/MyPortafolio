@@ -1,0 +1,75 @@
+---
+const contactMethods = [
+    {
+        type: 'email',
+        icon: '📧',
+        label: 'Email',
+        value: 'guevaraorlando4@gmail.com',
+        href: 'mailto:guevaraorlando4@gmail.com',
+        color: 'from-red-500 to-orange-500'
+    },
+    {
+        type: 'linkedin',
+        icon: '💼',
+        label: 'LinkedIn',
+        value: 'Orlando Guevara Cossio',
+        href: 'https://www.linkedin.com/in/orlando-guevara-cossio-29210523a',
+        color: 'from-blue-600 to-blue-800'
+    },
+    {
+        type: 'phone',
+        icon: '📞',
+        label: 'Teléfono',
+        value: '+507 63457218',
+        href: 'tel:+50763457218',
+        color: 'from-green-500 to-emerald-600'
+    },
+    {
+        type: 'location',
+        icon: '📍',
+        label: 'Ubicación',
+        value: 'Panamá, Panamá',
+        href: '#',
+        color: 'from-purple-500 to-indigo-600'
+    }
+];
+---
+<section id="contact" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-8">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-800 relative">
+            Contacto
+            <div class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-primary to-primary-dark rounded-full"></div>
+        </h2>
+
+        <div class="max-w-3xl mx-auto text-center mb-16">
+            <p class="text-xl text-gray-600 leading-relaxed">
+                ¿Interesado en colaborar en proyectos innovadores? Estoy disponible para discutir
+                oportunidades de desarrollo backend, arquitecturas de microservicios y soluciones
+                escalables. <span class="font-semibold text-primary">¡Conectemos!</span>
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {contactMethods.map(method => (
+                    <a href={method.href} class={`group block ${method.type === 'location' ? 'cursor-default' : ''}`} target={method.href.startsWith('http') ? '_blank' : ''}>
+                        <div class="bg-white p-8 rounded-2xl shadow-lg text-center hover:-translate-y-3 hover:shadow-2xl transition-all duration-300 group-hover:scale-105 relative overflow-hidden">
+                            <!-- Background Gradient on Hover -->
+                            <div class={`absolute inset-0 bg-gradient-to-br ${method.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-2xl`}></div>
+
+                            <div class={`relative z-10 w-20 h-20 bg-gradient-to-br ${method.color} rounded-full flex items-center justify-center text-3xl text-white mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                                {method.icon}
+                            </div>
+                            <div class="relative z-10">
+                                <div class="font-bold text-gray-800 mb-2 group-hover:text-gray-900 transition-colors">
+                                    {method.label}
+                                </div>
+                                <div class="text-sm text-gray-600 break-all group-hover:text-gray-700 transition-colors">
+                                    {method.value}
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+            ))}
+        </div>
+    </div>
+</section>

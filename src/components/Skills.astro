@@ -1,0 +1,225 @@
+---
+import {siNextdotjs, siReact, siNodedotjs,siSpringboot, siPostgresql, siGit, siMongodb, siRedis, siHibernate, siIntellijidea, siApachemaven, siGradle, siGithubactions, siFastapi, siPython} from 'simple-icons';
+import awsLogo from '../assets/aws-svgrepo-com(1).svg';
+import javaLogo from '../assets/java-svgrepo-com.svg';
+const technicalSkills = [
+    { name: 'SpringBoot', icon: siSpringboot, category: 'framework' },
+    { name: 'SpringCloud', icon: '☁️', category: 'framework' },
+    { name: 'Hibernate', icon: siHibernate, category: 'orm' },
+    { name: 'PostgresSQL', icon: siPostgresql, category: 'database' },
+    { name: 'MongoDB', icon: siMongodb, category: 'database' },
+    { name: 'Redis', icon: siRedis, category: 'database' },
+    { name: 'Python', icon: siPython, category: 'framework' },
+    { name: 'FastAPI', icon: siFastapi, category: 'framework' },
+];
+const frontEndSkill = [
+    { name: 'NextJS', icon: siNextdotjs, category: 'framework' },
+    { name: 'NodeJS', icon: siNodedotjs, category: 'framework' },
+    { name: 'React', icon: siReact, category: 'orm' },
+];
+const softSkills = [
+    {
+        name: 'Comunicación con Stakeholders',
+        icon: '🗣️',
+        description: 'Facilito la comunicación entre equipos técnicos y stakeholders'
+    },
+    {
+        name: 'Resolución de Problemas Complejos',
+        icon: '🧩',
+        description: 'Análisis y solución de desafíos técnicos complejos'
+    },
+    {
+        name: 'Pensamiento Crítico',
+        icon: '🧠',
+        description: 'Evaluación objetiva y toma de decisiones informadas'
+    },
+    {
+        name: 'Adaptabilidad',
+        icon: '🔄',
+        description: 'Flexibilidad ante nuevas tecnologías y metodologías'
+    },
+    {
+        name: 'Consultoría Técnica',
+        icon: '💡',
+        description: 'Asesoramiento en decisiones técnicas y arquitecturales'
+    }
+];
+
+
+const developerKit = [
+    {
+        name: 'IntelliJ IDEA',
+        icon: siIntellijidea,
+        description: 'Facilito la comunicación entre equipos técnicos y stakeholders'
+    },
+    {
+        name: 'Maven',
+        icon: siApachemaven,
+        description: 'Facilito la comunicación entre equipos técnicos y stakeholders'
+    },
+    {
+        name: 'Gradle',
+        icon: siGradle,
+        description: 'Facilito la comunicación entre equipos técnicos y stakeholders'
+    },
+    {
+        name: 'GitHub Actions',
+        icon: siGithubactions,
+        description: 'Facilito la comunicación entre equipos técnicos y stakeholders'
+    },
+    {
+        name: 'Git',
+        icon: siGit,
+        description: 'Facilito la comunicación entre equipos técnicos y stakeholders'
+    },
+
+]
+---
+
+<section id="skills" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-8">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-800 relative">
+            Habilidades y Competencias
+            <div class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-primary to-primary-dark rounded-full"></div>
+        </h2>
+
+        <div class="grid lg:grid-cols-2 gap-12">
+            <div class="bg-gray-50 p-8 rounded-2xl shadow-lg">
+                <h3 class="text-2xl font-bold text-center mb-8 text-gray-800 relative">
+                    🛠️ Front-End
+                    <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-12 h-0.5 bg-gradient-to-r from-primary to-primary-dark rounded-full"></div>
+                </h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    {frontEndSkill.map(skill => (
+
+                            <div class="group bg-white p-6 rounded-xl text-center shadow-md hover:-translate-y-2 hover:shadow-xl transition-all duration-300 cursor-pointer">
+                                <div class="flex justify-center items-center mb-3 group-hover:scale-110 transition-transform duration-300">
+                                    {typeof skill.icon === 'string' ? (
+                                            <span class="text-4xl">{skill.icon}</span>
+                                    ) : (
+                                            <svg
+                                                    width="40"
+                                                    height="40"
+                                                    viewBox="0 0 24 24"
+                                                    class="fill-current text-gray-700 group-hover:text-primary transition-colors"
+                                            >
+                                                <path d={skill.icon.path}/>
+                                            </svg>
+                                    )}
+                                </div>
+                                <div class="font-semibold text-gray-800 group-hover:text-primary transition-colors">
+                                    {skill.name}
+                                </div>
+                            </div>
+                    ))}
+                </div>
+            </div>
+            <!-- Technical Skills -->
+            <div class="bg-gray-50 p-8 rounded-2xl shadow-lg">
+                <h3 class="text-2xl font-bold text-center mb-8 text-gray-800 relative">
+                    🛠️ Back-End
+                    <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-12 h-0.5 bg-gradient-to-r from-primary to-primary-dark rounded-full"></div>
+                </h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <div class="group bg-white p-6 rounded-xl text-center shadow-md hover:-translate-y-2 hover:shadow-xl transition-all duration-300 cursor-pointer">
+                        <div class="flex justify-center items-center mb-3 group-hover:scale-110 transition-transform duration-300">
+                            <img src={awsLogo.src}
+                                 width="40"
+                                 height="40"/>
+                        </div>
+                        <div class="font-semibold text-gray-800 group-hover:text-primary transition-colors">
+                            AWS
+                        </div>
+                    </div>
+                    <div class="group bg-white p-6 rounded-xl text-center shadow-md hover:-translate-y-2 hover:shadow-xl transition-all duration-300 cursor-pointer">
+                        <div class="flex justify-center items-center mb-3 group-hover:scale-110 transition-transform duration-300">
+                            <img src={javaLogo.src}
+                                 width="40"
+                                 height="40"/>
+                        </div>
+                        <div class="font-semibold text-gray-800 group-hover:text-primary transition-colors">
+                            Java
+                        </div>
+                    </div>
+                    {technicalSkills.map(skill => (
+
+                            <div class="group bg-white p-6 rounded-xl text-center shadow-md hover:-translate-y-2 hover:shadow-xl transition-all duration-300 cursor-pointer">
+                                <div class="flex justify-center items-center mb-3 group-hover:scale-110 transition-transform duration-300">
+                                    {typeof skill.icon === 'string' ? (
+                                            <span class="text-4xl">{skill.icon}</span>
+                                    ) : (
+                                            <svg
+                                                    width="40"
+                                                    height="40"
+                                                    viewBox="0 0 24 24"
+                                                    class="fill-current text-gray-700 group-hover:text-primary transition-colors"
+                                            >
+                                                <path d={skill.icon.path}/>
+                                            </svg>
+                                    )}
+                                </div>
+                                <div class="font-semibold text-gray-800 group-hover:text-primary transition-colors">
+                                    {skill.name}
+                                </div>
+                            </div>
+                    ))}
+                </div>
+            </div>
+
+            <!--&lt;!&ndash; Soft Skills &ndash;&gt;-->
+            <!--<div class="bg-gray-50 p-8 rounded-2xl shadow-lg">-->
+            <!--    <h3 class="text-2xl font-bold text-center mb-8 text-gray-800 relative">-->
+            <!--        🚀 Habilidades Adicionales-->
+            <!--        <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-12 h-0.5 bg-gradient-to-r from-primary to-primary-dark rounded-full"></div>-->
+            <!--    </h3>-->
+            <!--    <div class="space-y-4">-->
+            <!--        {softSkills.map(skill => (-->
+            <!--                <div class="bg-white p-6 rounded-xl shadow-md hover:-translate-y-1 hover:shadow-lg transition-all duration-300 flex items-start space-x-4 group cursor-pointer">-->
+            <!--                    <div class="text-3xl group-hover:scale-110 transition-transform duration-300 flex-shrink-0">-->
+            <!--                        {skill.icon}-->
+            <!--                    </div>-->
+            <!--                    <div class="flex-1">-->
+            <!--                        <div class="font-semibold text-gray-800 mb-1 group-hover:text-primary transition-colors">-->
+            <!--                            {skill.name}-->
+            <!--                        </div>-->
+            <!--                        <div class="text-sm text-gray-600 leading-relaxed">-->
+            <!--                            {skill.description}-->
+            <!--                        </div>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--        ))}-->
+            <!--    </div>-->
+            <!--</div>-->
+
+            <div class="bg-gray-50 p-8 rounded-2xl shadow-lg">
+                <h3 class="text-2xl font-bold text-center mb-8 text-gray-800 relative">
+                    🛠️ Herramientas de Desarrollo
+                    <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-12 h-0.5 bg-gradient-to-r from-primary to-primary-dark rounded-full"></div>
+                </h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    {developerKit.map(skill => (
+                            <div class="group bg-white p-6 rounded-xl text-center shadow-md hover:-translate-y-2 hover:shadow-xl transition-all duration-300 cursor-pointer">
+                                <div class="flex justify-center items-center mb-3 group-hover:scale-110 transition-transform duration-300">
+                                    {typeof skill.icon === 'string' ? (
+                                            <span class="text-4xl">{skill.icon}</span>
+                                    ) : (
+                                            <svg
+                                                    width="40"
+                                                    height="40"
+                                                    viewBox="0 0 24 24"
+                                                    class="fill-current text-gray-700 group-hover:text-primary transition-colors"
+                                            >
+                                                <path d={skill.icon.path}/>
+                                            </svg>
+                                    )}
+                                </div>
+                                <div class="font-semibold text-gray-800 group-hover:text-primary transition-colors">
+                                    {skill.name}
+                                </div>
+                            </div>
+                    ))}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

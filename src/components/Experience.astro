@@ -1,0 +1,82 @@
+---
+const experiences = [
+    {
+        title: "Oficial de Desarrollo FullStack",
+        company: "CanalaBank, S.A",
+        duration: "Mayo 2024 – Actualidad",
+        current: true,
+        achievements: [
+            "Participé activamente en el diseño de una arquitectura de microservicios, desacoplando dominios críticos (Cuentas, Transferencias, Usuarios) para mejorar la escalabilidad y facilitar el mantenimiento futuro.",
+            "Implementé el esquema de seguridad basado en tokens JWT y el flujo OAuth 2.0 para proteger los endpoints y asegurar el acceso controlado de usuarios.",
+            "Apliqué las mejores prácticas de seguridad del OWASP Top 10 para mitigar riesgos comunes como inyección SQL, XSS y gestión incorrecta de sesiones.",
+            "Colaboré en la configuración de pipelines de CI/CD para automatizar procesos de build, testing y despliegue, reduciendo significativamente los tiempos de entrega."
+        ]
+    },
+    {
+        title: "Desarrollador de Software Intermedio",
+        company: "PersonalSoft, S.A",
+        duration: "Junio 2023 – Abril 2024",
+        current: false,
+        achievements: [
+            "Realicé análisis exhaustivo de la documentación técnica y guías de integración de Apple para definir flujos de datos, requisitos de seguridad y alcance técnico del proyecto.",
+            "Participé activamente en el proceso de certificación final con el equipo de Apple, proveyendo soporte técnico y realizando ajustes necesarios para el cumplimiento de requisitos.",
+            "Implementé el flujo de seguridad crítico para recibir y descifrar el payment token de Apple, siguiendo las más estrictas guías de seguridad y cumplimiento PCI-DSS."
+        ]
+    },
+    {
+        title: "Desarrollador FullStack",
+        company: "Compulab, S.A",
+        duration: "Febrero 2021 – Junio 2023",
+        current: false,
+        achievements: [
+            "Construí y mantuve componentes clave de módulos incluyendo Modelos de datos, Vistas (XML) y Controladores, siguiendo las mejores prácticas del framework.",
+            "Realicé mantenimiento evolutivo de módulos, corrigiendo errores y optimizando consultas a PostgreSQL para mejorar el rendimiento general.",
+            "Participé en la planificación de migración de versiones, analizando la compatibilidad de los módulos personalizados."
+        ]
+    }
+];
+---
+<section id="experience" class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-8">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-800 relative">
+            Experiencia Profesional
+            <div class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-primary to-primary-dark rounded-full"></div>
+        </h2>
+
+        <div class="relative max-w-5xl mx-auto">
+            <!-- Timeline Line -->
+            <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-primary to-primary-dark rounded-full hidden md:block"></div>
+
+            {experiences.map((exp, index) => (
+                    <div class={`relative mb-12 ${index % 2 === 0 ? 'md:pr-1/2' : 'md:pl-1/2 md:ml-auto'} md:w-1/2`}>
+                        <!-- Timeline Dot -->
+                        <div class={`absolute top-8 w-6 h-6 bg-white border-4 border-primary rounded-full z-10 hidden md:block ${
+                            index % 2 === 0 ? 'right-0 transform translate-x-3' : 'left-0 transform -translate-x-3'
+                        }`}>
+                        </div>
+
+                        <div class="bg-white p-8 rounded-2xl shadow-xl hover:-translate-y-2 transition-all duration-300 relative">
+                            {exp.current && (
+                                    <div class="absolute -top-3 left-6 bg-green-500 text-white px-4 py-1 rounded-full text-xs font-semibold">
+                                        Actual
+                                    </div>
+                            )}
+
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">{exp.title}</h3>
+                            <div class="text-primary font-semibold text-lg mb-1">{exp.company}</div>
+                            <div class="text-gray-500 text-sm italic mb-6">{exp.duration}</div>
+
+                            <ul class="space-y-3">
+                                {exp.achievements.map(achievement => (
+                                        <li class="flex items-start text-gray-600 leading-relaxed">
+                                            <span class="text-primary mr-3 mt-1 text-sm">▶</span>
+                                            <span class="text-sm">{achievement}</span>
+                                        </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+            ))}
+        </div>
+    </div>
+</section>

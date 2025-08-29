@@ -1,22 +1,83 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+export interface Props {
+	title: string;
+	description?: string;
+}
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+const { title, description = "Portafolio de Orlando Gabriel Guevara Cossio" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>{title}</title>
+	<meta name="description" content={description} />
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+	<style>
+		/* Estilos custom que funcionan */
+		.bg-gradient-hero {
+			background: linear-gradient(135deg, #2c5aa0 0%, #1e3a5f 100%);
+		}
+
+		.bg-gradient-primary {
+			background: linear-gradient(135deg, #2c5aa0, #1e3a5f);
+		}
+
+		html {
+			scroll-behavior: smooth;
+		}
+
+		/* Timeline styles */
+		.timeline::after {
+			content: '';
+			position: absolute;
+			width: 4px;
+			background: linear-gradient(135deg, #2c5aa0, #1e3a5f);
+			top: 0;
+			bottom: 0;
+			left: 50%;
+			margin-left: -2px;
+		}
+
+		.timeline-dot::after {
+			content: '';
+			position: absolute;
+			width: 20px;
+			height: 20px;
+			right: -10px;
+			background-color: white;
+			border: 4px solid #2c5aa0;
+			top: 30px;
+			border-radius: 50%;
+			z-index: 1;
+		}
+
+		.timeline-dot:nth-child(even)::after {
+			left: -10px;
+		}
+
+		@media (max-width: 768px) {
+			.timeline::after {
+				left: 31px;
+			}
+
+			.timeline-dot::after {
+				left: 22px;
+			}
+
+			.timeline-dot:nth-child(even)::after {
+				left: 22px;
+			}
+		}
+	</style>
+</head>
+<body class="font-sans">
+<slot />
+</body>
+</html>

@@ -1,0 +1,45 @@
+---
+const contactInfo = [
+    { icon: '📍', text: 'Panamá, Panamá' },
+    { icon: '📞', text: '+507 63457218' },
+    { icon: '✉️', text: 'guevaraorlando4@gmail.com' }
+];
+---
+<section id="home" class="pt-32 pb-20 text-center text-white bg-gradient-to-br from-primary to-primary-dark min-h-screen flex items-center">
+    <div class="max-w-6xl mx-auto px-8 w-full">
+        <h1 class="text-5xl md:text-6xl font-extrabold mb-4 drop-shadow-lg animate-fade-in">
+            Orlando Gabriel Guevara Cossio
+        </h1>
+        <div class="text-2xl md:text-3xl mb-8 opacity-90 animate-fade-in-delay">
+            Ingeniero de Software
+        </div>
+        <p class="text-xl max-w-4xl mx-auto mb-8 opacity-90 leading-relaxed animate-fade-in-delay-2">
+            Ingeniero de Software con más de 3 años de experiencia en desarrollo backend.
+            Especializado en implementación de APIs, TDD, microservicios y herramientas como Git y Kubernetes.
+            Comprometido con la calidad del código y la entrega de soluciones eficientes y escalables.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4 mb-12 animate-fade-in-delay-3">
+            {contactInfo.map(info => (
+                    <span class="bg-white/20 backdrop-blur-md px-6 py-3 rounded-full text-sm border border-white/30 hover:bg-white/30 transition-all">
+          {info.icon} {info.text}
+        </span>
+            ))}
+        </div>
+        <a href="#about" class="inline-block bg-white/20 backdrop-blur-md text-white px-10 py-4 rounded-full font-semibold transition-all duration-300 border-2 border-white/30 hover:bg-white hover:text-primary hover:-translate-y-1 animate-fade-in-delay-4">
+            Conoce mi trabajo
+        </a>
+    </div>
+</section>
+
+<style>
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate-fade-in { animation: fadeIn 1s ease-out; }
+    .animate-fade-in-delay { animation: fadeIn 1s ease-out 0.2s both; }
+    .animate-fade-in-delay-2 { animation: fadeIn 1s ease-out 0.4s both; }
+    .animate-fade-in-delay-3 { animation: fadeIn 1s ease-out 0.6s both; }
+    .animate-fade-in-delay-4 { animation: fadeIn 1s ease-out 0.8s both; }
+</style>

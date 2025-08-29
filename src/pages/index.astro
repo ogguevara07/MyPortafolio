@@ -1,11 +1,59 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Experience from '../components/Experience.astro';
+import Skills from '../components/Skills.astro';
+import Education from '../components/Education.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Orlando Gabriel Guevara Cossio 👨‍💻 | Ingeniero de Software"
+		description="Portafolio de Orlando Gabriel Guevara Cossio, Ingeniero de Software con más de 3 años de experiencia en desarrollo backend.">
+
+	<Header />
+	<Hero />
+	<main>
+		<About />
+		<Experience />
+		<Skills />
+		<Education />
+		<Contact />
+	</main>
+	<Footer />
+
+	<!-- Global Scripts -->
+	<script>
+		// Intersection Observer for animations
+		const observerOptions = {
+			threshold: 0.1,
+			rootMargin: '0px 0px -50px 0px'
+		};
+
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					const element = entry.target as HTMLElement;
+					element.style.opacity = '1';
+					element.style.transform = 'translateY(0)';
+				}
+			});
+		}, observerOptions);
+
+		// Initialize animations
+		document.addEventListener('DOMContentLoaded', () => {
+			const animatedElements = document.querySelectorAll('.hover\\:-translate-y-2, .hover\\:-translate-y-1, .hover\\:-translate-y-3');
+
+			animatedElements.forEach(el => {
+				const element = el as HTMLElement;
+				element.style.opacity = '0';
+				element.style.transform = 'translateY(30px)';
+				element.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+				observer.observe(element);
+			});
+		});
+	</script>
+
 </Layout>

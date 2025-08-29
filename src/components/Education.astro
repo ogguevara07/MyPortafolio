@@ -1,0 +1,69 @@
+---
+const contactMethods = [
+    {
+        type: 'email',
+        icon: '📧',
+        label: 'Email',
+        value: 'guevaraorlando4@gmail.com',
+        href: 'mailto:guevaraorlando4@gmail.com',
+        color: 'from-red-500 to-orange-500'
+    },
+    {
+        type: 'linkedin',
+        icon: '💼',
+        label: 'LinkedIn',
+        value: 'Orlando Guevara Cossio',
+        href: 'https://www.linkedin.com/in/orlando-guevara-cossio-29210523a',
+        color: 'from-blue-600 to-blue-800'
+    },
+    {
+        type: 'phone',
+        icon: '📞',
+        label: 'Teléfono',
+        value: '+507 63457218',
+        href: 'tel:+50763457218',
+        color: 'from-green-500 to-emerald-600'
+    },
+    {
+        type: 'location',
+        icon: '📍',
+        label: 'Ubicación',
+        value: 'Panamá, Panamá',
+        href: '#',
+        color: 'from-purple-500 to-indigo-600'
+    }
+];
+---
+<section id="education" class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-8">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-800 relative">
+            Educación
+            <div class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-primary to-primary-dark rounded-full"></div>
+        </h2>
+
+        <div class="max-w-2xl mx-auto">
+            <div class="bg-white p-10 rounded-2xl shadow-xl text-center hover:-translate-y-2 transition-all duration-300 relative overflow-hidden">
+                <!-- Background decoration -->
+                <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/10 to-transparent rounded-full transform translate-x-8 -translate-y-8"></div>
+                <div class="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-primary-dark/10 to-transparent rounded-full transform -translate-x-6 translate-y-6"></div>
+
+                <div class="relative z-10">
+                    <div class="text-7xl mb-8 animate-bounce">🎓</div>
+                    <h3 class="text-2xl font-bold text-primary mb-4">
+                        Licenciatura en Desarrollo de Software
+                    </h3>
+                    <div class="text-xl text-gray-700 font-semibold mb-4">
+                        Universidad Tecnológica de Panamá
+                    </div>
+                    <div class="text-gray-500 text-lg mb-6">
+                        Graduación esperada: <span class="font-semibold">Diciembre 2026</span>
+                    </div>
+                    <div class="inline-flex items-center bg-green-100 text-green-800 px-6 py-2 rounded-full text-sm font-semibold">
+                        <div class="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
+                        En progreso
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
